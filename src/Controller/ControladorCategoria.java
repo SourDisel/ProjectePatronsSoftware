@@ -13,7 +13,7 @@ public class ControladorCategoria {
         this.vista = vista;
     }
 
-    private ActionListener BotonAñadir = new ActionListener() {
+    private ActionListener BotonAñadirCategoria = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             String nom = vista.getCNomAfegir();
@@ -24,7 +24,7 @@ public class ControladorCategoria {
         }
     };
     public void iniciarControlador() {
-        vista.getPRAfegirBoton().addActionListener(BotonAñadir);
+        vista.getPRAfegirBoton().addActionListener(BotonAñadirCategoria);
         vista.setVisible(true);
     }
 }

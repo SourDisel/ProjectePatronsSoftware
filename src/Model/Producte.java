@@ -8,6 +8,7 @@ public class Producte {
     private String tipusPreu; // unitari / pes / paquet
     private int stock;
     private boolean oferta;
+    private int idCategoria;
 
     public Producte(int codi, String nom, Categoria categoria, double preu, String tipusPreu, int stock, boolean oferta) {
         this.codi = codi;
@@ -18,7 +19,16 @@ public class Producte {
         this.stock = stock;
         this.oferta = oferta;
     }
-
+    public Producte(String nom, int idCategoria, double preu, String tipusPreu, int stock) {
+        this.nom = nom;
+        this.idCategoria = idCategoria;
+        this.preu = preu;
+        this.tipusPreu = tipusPreu;
+        this.stock = stock;
+    }
+    public int getIdCategoria() {
+        return getCategoria().getId();
+    }
     public int getCodi() {
         return codi;
     }
