@@ -18,7 +18,11 @@ public class DAOCategoria {
             stmt.setString(2, c.getDescripcion());
 
             stmt.executeUpdate();
-
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+            if (generatedKeys.next()) {
+                c.setId(generatedKeys.getInt(1));
+            }
+        }
         } catch (SQLException e) {
             e.printStackTrace();
         }

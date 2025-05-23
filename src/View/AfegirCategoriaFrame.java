@@ -4,6 +4,11 @@
  */
 package View;
 
+import java.lang.ModuleLayer.Controller;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import Controller.ControladorCategoria;
 /**
  *
  * @author ivanm
@@ -12,11 +17,24 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form AfegirFrame
+     * This constructor initializes the components of the frame.
      */
     public AfegirCategoriaFrame() {
         initComponents();
     }
-
+    /**
+     * This method returns the text from the CNomAfegir text field.
+     * @return the text from CNomAfegir
+     */
+    public String getCNomAfegir() {
+        return CNomAfegir.getText();
+    }
+    public String getCDescripcioAfegir() {
+        return CDescripcioAfegir.getText();
+    }
+    public JButton getPRAfegirBoton() {
+        return CATfegirBoton;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,14 +48,13 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
         tfNom3 = new javax.swing.JTextField();
         tfNom8 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        PRAfegirBoton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CNomAfegir = new javax.swing.JTextField();
         CDescripcioAfegir = new javax.swing.JTextField();
         PRNomAfegir = new javax.swing.JLabel();
         PRCategoriaAfegir = new javax.swing.JLabel();
-        PRAfegirBoton1 = new javax.swing.JButton();
+        CATfegirBoton = new javax.swing.JButton();
 
         tfNom1.setToolTipText("Pepe Pepito");
 
@@ -47,7 +64,7 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel2");
 
-        PRAfegirBoton.setText("Afegir");
+        CATfegirBoton.setText("Afegir");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +98,7 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
 
         PRCategoriaAfegir.setText("Descripcio");
 
-        PRAfegirBoton1.setText("Afegir");
+        CATfegirBoton.setText("Afegir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,7 +116,7 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
                                 .addComponent(PRNomAfegir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CNomAfegir, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(PRAfegirBoton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CATfegirBoton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -122,7 +139,7 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
                     .addComponent(CDescripcioAfegir, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                     .addComponent(PRCategoriaAfegir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(PRAfegirBoton1)
+                .addComponent(CATfegirBoton)
                 .addContainerGap())
         );
 
@@ -170,8 +187,7 @@ public class AfegirCategoriaFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CDescripcioAfegir;
     private javax.swing.JTextField CNomAfegir;
-    private javax.swing.JButton PRAfegirBoton;
-    private javax.swing.JButton PRAfegirBoton1;
+    private javax.swing.JButton CATfegirBoton;
     private javax.swing.JLabel PRCategoriaAfegir;
     private javax.swing.JLabel PRNomAfegir;
     private javax.swing.JLabel jLabel1;
