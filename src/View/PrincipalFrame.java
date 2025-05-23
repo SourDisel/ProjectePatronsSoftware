@@ -16,6 +16,30 @@ public class PrincipalFrame extends javax.swing.JFrame {
     public PrincipalFrame() {
         initComponents();
     }
+    public javax.swing.JButton getJButtonAfegir() {
+        return jButton_afegir;
+    }
+    public javax.swing.JButton getJButtonModificar() {
+        return jButton_modificar;
+    }
+    public javax.swing.JButton getJButtonEliminar() {
+        return jButton_eliminar;
+    }
+    public javax.swing.JButton getJButtonAfegirCategoria() {
+        return jButton_afegir1;
+    }
+    public javax.swing.JButton getJButtonFiltrar() {
+        return jButton_afegir2;
+    }
+    public javax.swing.JComboBox<String> getJComboBoxCategoria() {
+        return jComboBox1;
+    }
+    public javax.swing.JSpinner getJSpinnerStock() {
+        return jSpinner1;
+    }
+    public javax.swing.JTable getJTablePrincipalFruteria() {
+        return jTable_PrincialFruteria;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,7 +51,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable_llistatAlumnes = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();

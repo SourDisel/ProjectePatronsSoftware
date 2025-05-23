@@ -5,7 +5,6 @@
 package View;
 
 import java.lang.ModuleLayer.Controller;
-
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import Controller.ControladorCategoria;
