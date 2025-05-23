@@ -29,4 +29,4 @@ public class ControladorModificacion {
         vista.getPRModificarBoton().addActionListener(BotonModificarProducte);
         vista.setVisible(true);
     }
-    }
+}
