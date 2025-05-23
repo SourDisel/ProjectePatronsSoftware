@@ -6,46 +6,57 @@ import java.sql.Statement;
 
 public class DataBaseCreacio {
 
-    public static void crearbasedades() {
-        String sql = "USE GestorProductesIvanM;"
-                + "CREATE TABLE IF NOT EXISTS producte ("
-                + "codi INT AUTO_INCREMENT PRIMARY KEY,"
-                + "nom VARCHAR(255) NOT NULL CHECK (LENGTH(nom) >= 2),"
-                + "categoria INT NOT NULL,"
-                + "preu DECIMAL(10, 2) NOT NULL CHECK (preu > 0),"
-                + "tipus_preu VARCHAR(20) NOT NULL CHECK (tipus_preu IN ('unitari', 'pes', 'paquet')),"
-                + "stock INT NOT NULL CHECK (stock >= 0),"
-                + "oferta BOOLEAN NOT NULL,"
-                + "FOREIGN KEY (categoria) REFERENCES categoria(id)"
-                + ");";
+    public static void crearCategoria() {
+        // Crear la base de dades (connexió general)
+        try (Connection conn = DataBaseConnection.getGeneralConnection();
+             Statement stmt = conn.createStatement()) {
 
-        try (Connection conn = DataBaseConnection.getNewConnection();
-                Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+            stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS GestorProductesIvanM");
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error creant la base de dades: " + e.getMessage());
+            return;
+        }
+
+        // Crear taula categoria
+        try (Connection conn = DataBaseConnection.getNewConnection();
+             Statement stmt = conn.createStatement()) {
+
+            String sql = "CREATE TABLE IF NOT EXISTS categoria (" +
+                         "id INT AUTO_INCREMENT PRIMARY KEY," +
+                         "nom VARCHAR(255) NOT NULL UNIQUE," +
+                         "descripcio VARCHAR(200)" +
+                         ")";
+            stmt.executeUpdate(sql);
+
+        } catch (SQLException e) {
+            System.out.println("Error creant la taula categoria: " + e.getMessage());
         }
     }
 
-    public static void crearCategoria() {
-        String sql = "CREATE DATABASE IF NOT EXISTS GestorProductesIvanM;"
-                + "USE GestorProductesIvanM;"
-                + "CREATE TABLE IF NOT EXISTS categoria ("
-                + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                + "nom VARCHAR(255) NOT NULL UNIQUE CHECK (LENGTH(nom) >= 2),"
-                + "descripcio VARCHAR(200)"
-                + ");";
-
+    public static void crearProducte() {
         try (Connection conn = DataBaseConnection.getNewConnection();
-                Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+             Statement stmt = conn.createStatement()) {
+
+            String sql = "CREATE TABLE IF NOT EXISTS producte (" +
+                         "codi INT AUTO_INCREMENT PRIMARY KEY," +
+                         "nom VARCHAR(255) NOT NULL," +
+                         "categoria INT NOT NULL," +
+                         "preu DECIMAL(10, 2) NOT NULL," +
+                         "tipus_preu VARCHAR(20) NOT NULL," +
+                         "stock INT NOT NULL," +
+                         "oferta BOOLEAN NOT NULL," +
+                         "FOREIGN KEY (categoria) REFERENCES categoria(id)" +
+                         ")";
+            stmt.executeUpdate(sql);
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error creant la taula producte: " + e.getMessage());
         }
     }
 
     public static void CreacionBase() {
         crearCategoria();
-        crearbasedades();
+        crearProducte();
     }
 }
