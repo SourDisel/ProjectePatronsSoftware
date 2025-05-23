@@ -29,6 +29,9 @@ public class Producte {
     public int getIdCategoria() {
         return getCategoria().getId();
     }
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
     public int getCodi() {
         return codi;
     }

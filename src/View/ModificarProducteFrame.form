@@ -57,35 +57,35 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="PRNomAfegir" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PNomAfegir" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="PNomModificar" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="PRPreuAfegir" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PPreuAfegir" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="PPreuModificar" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="PRTipusPreuAfegir" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TipusPreuJBox" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="TipusPreuJBoxModificar" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="PRAfegirOferta" min="-2" pref="118" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="PAfegirOferta" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="PAfegirModificar" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="PRCategoriaAfegir" min="-2" pref="118" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ComboBoxCategoria" max="32767" attributes="0"/>
+                              <Component id="ComboBoxCategoriaM" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="PRStockAfegir" min="-2" pref="118" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PStockAfegir" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="PStockModificar" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="PRAfegirBoton" alignment="1" max="32767" attributes="0"/>
+                          <Component id="PRModificarBoton" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -100,36 +100,36 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PNomAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PNomModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PRNomAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="PRCategoriaAfegir" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="ComboBoxCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ComboBoxCategoriaM" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PPreuAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PPreuModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PRPreuAfegir" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="PRTipusPreuAfegir" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="TipusPreuJBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TipusPreuJBoxModificar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PStockAfegir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PStockModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PRStockAfegir" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="PAfegirOferta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PAfegirModificar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="PRAfegirOferta" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="PRAfegirBoton" min="-2" max="-2" attributes="0"/>
+              <Component id="PRModificarBoton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -149,7 +149,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -157,10 +157,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <Component id="jLabel1" pref="28" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
+              <Component id="jLabel1" alignment="1" pref="28" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -173,12 +170,12 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Afegir producte"/>
+            <Property name="text" type="java.lang.String" value="Modificar producte"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="PNomAfegir">
+    <Component class="javax.swing.JTextField" name="PNomModificar">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
@@ -186,12 +183,12 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
       </AccessibilityProperties>
     </Component>
-    <Component class="javax.swing.JTextField" name="PPreuAfegir">
+    <Component class="javax.swing.JTextField" name="PPreuModificar">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="PStockAfegir">
+    <Component class="javax.swing.JTextField" name="PStockModificar">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
@@ -199,10 +196,10 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
       </AccessibilityProperties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PStockAfegirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PStockModificarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="PAfegirOferta">
+    <Component class="javax.swing.JComboBox" name="PAfegirModificar">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
@@ -215,11 +212,11 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
         <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="PAfegirOferta"/>
+          <ComponentRef name="PAfegirModificar"/>
         </Property>
       </AccessibilityProperties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PAfegirOfertaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PAfegirModificarActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -255,12 +252,12 @@
         <Property name="text" type="java.lang.String" value="Oferta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="PRAfegirBoton">
+    <Component class="javax.swing.JButton" name="PRModificarBoton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Afegir"/>
+        <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="TipusPreuJBox">
+    <Component class="javax.swing.JComboBox" name="TipusPreuJBoxModificar">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -274,7 +271,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ComboBoxCategoria">
+    <Component class="javax.swing.JComboBox" name="ComboBoxCategoriaM">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
