@@ -24,7 +24,6 @@ public class ControladorCategoria {
             DAOCategoria daoCategoria = new DAOCategoria();
             daoCategoria.insertarCategoria(categoria);
             vista.setVisible(false);
-            principalFrame.setVisible(true);
         }
     };
 
