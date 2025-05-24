@@ -1,14 +1,15 @@
 package Controller;
 
 import View.AfegirCategoriaFrame;
+import View.PrincipalFrame;
 import Model.Categoria;
 import Data.DAOCategoria;
 import java.awt.event.ActionListener;
-import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class ControladorCategoria {
     private AfegirCategoriaFrame vista;
+    private PrincipalFrame principalFrame;
 
     public ControladorCategoria(AfegirCategoriaFrame vista) {
         this.vista = vista;
@@ -22,12 +23,13 @@ public class ControladorCategoria {
             Categoria categoria = new Categoria(nom, descripcio);
             DAOCategoria daoCategoria = new DAOCategoria();
             daoCategoria.insertarCategoria(categoria);
+            vista.setVisible(false);
+            principalFrame.setVisible(true);
         }
     };
+
     public void iniciarControlador() {
         vista.getPRAfegirBoton().addActionListener(BotonAñadirCategoria);
         vista.setVisible(true);
     }
-    
 }
-
