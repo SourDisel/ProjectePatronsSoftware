@@ -18,7 +18,6 @@ public class ControladorModificacion {
     private ModificarProducteFrame vista;
     private PrincipalFrame principalFrame;
     private ControladorPrincipal controladorPrincipal;
-    private int productoId; // Guarda el id para modificar
 
     public ControladorModificacion(ModificarProducteFrame vista, PrincipalFrame principalFrame,
             ControladorPrincipal controladorPrincipal) {
@@ -41,9 +40,8 @@ public class ControladorModificacion {
                 categoria.setNombre(Cat);
 
                 double preu = Double.parseDouble(vista.getPreuModificat());
-                String Tipus = vista.getTipusPreuModificat();
+                String Tipus = (String) ((JComboBox<?>) vista.getTipusPreuModificat()).getSelectedItem();
                 int stock = Integer.parseInt(vista.getStockModificat());
-
                 Producte producteModificat = new Producte();
                 producteModificat.setNom(nom);
                 producteModificat.setCategoria(categoria);
@@ -52,8 +50,6 @@ public class ControladorModificacion {
                 producteModificat.setStock(stock);
 
                 daoProducte.modificarProducte(producteModificat);
-
-                JOptionPane.showMessageDialog(vista, "Producto modificado correctamente.");
 
                 vista.setVisible(false);
                 principalFrame.setVisible(true);
@@ -99,10 +95,10 @@ public class ControladorModificacion {
     }
 
     public void cargarCategoriasEnCombo() {
-    List<Categoria> categorias = DAOCategoria.listarCategorias();
-    vista.getComboBoxCategoria().removeAllItems();
-    for (Categoria c : categorias) {
-        vista.getComboBoxCategoria().addItem(c.getNombre());
+        List<Categoria> categorias = DAOCategoria.listarCategorias();
+        vista.getComboBoxCategoria().removeAllItems();
+        for (Categoria c : categorias) {
+            vista.getComboBoxCategoria().addItem(c.getNombre());
+        }
     }
-}
 }

@@ -7,6 +7,13 @@
             <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/View/AfegirCategoriaFrame.java</file>
             <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/View/AfegirProducteFrame.java</file>
             <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/View/ModificarProducteFrame.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Principal/Principal.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Data/DataBaseCreacio.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Data/DataBaseConnection.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Controller/ControladorPrincipal.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Controller/ControladorProducte.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Data/DAOProducte.java</file>
+            <file>file:/home/ivanm/NetBeansProjects/ProjectePatronsSoftwareGIT/src/Data/DAOCategoria.java</file>
         </group>
     </open-files>
 </project-private>
