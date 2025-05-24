@@ -4,10 +4,12 @@ import View.AfegirProducteFrame;
 import Model.Categoria;
 import Model.Producte;
 import Data.DAOProducte;
-import java.awt.event.ActionListener;
-import java.util.List;
-import java.awt.event.ActionEvent;
 import Data.DAOCategoria;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.List;
+
 public class ControladorProducte {
     private AfegirProducteFrame vista;
 
@@ -15,18 +17,35 @@ public class ControladorProducte {
         this.vista = vista;
     }
 
-    private ActionListener BotonAñadirProducte = new ActionListener() {
+    private final ActionListener BotonAñadirProducte = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String nom = vista.getPNomAfegir();
-            String Cat = vista.getPCategoriaAfegir();
-            int idCategoria = DAOCategoria.buscarIdPorNombre(Cat);
-            double preu = Double.parseDouble(vista.getPPreuAfegir());
-            String Tipus = vista.getPTipusPreuAfegir();
-            int stock = Integer.parseInt(vista.getPStockAfegir());
-            Producte producte = new Producte(nom, idCategoria, preu, Tipus,stock);
-            DAOProducte daoProducte = new DAOProducte();
-            daoProducte.insertarProducte(producte);
+            try {
+                String nom = vista.getPNomAfegir();
+                String nomCategoria = vista.getPCategoriaAfegir();
+                int idCategoria = DAOCategoria.buscarIdPorNombre(nomCategoria);
+
+                Categoria categoria = new Categoria();
+                categoria.setId(idCategoria);
+                categoria.setNombre(nomCategoria);
+
+                double preu = Double.parseDouble(vista.getPPreuAfegir());
+                String tipus = vista.getPTipusPreuAfegir();
+                int stock = Integer.parseInt(vista.getPStockAfegir());
+                boolean oferta = vista.getPAfegirOferta().equalsIgnoreCase("Oferta");
+
+                Producte producte = new Producte(nom, categoria, preu, tipus, stock, oferta);
+
+                DAOProducte daoProducte = new DAOProducte();
+                daoProducte.insertarProducte(producte);
+
+                System.out.println("Producte afegit correctament: " + producte);
+
+            } catch (NumberFormatException ex) {
+                System.err.println("Error: preu o stock no vàlids.");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     };
 
@@ -35,13 +54,10 @@ public class ControladorProducte {
         cargarCategoriasEnCombo();
         vista.setVisible(true);
     }
+
     public void cargarCategoriasEnCombo() {
         List<Categoria> categorias = DAOCategoria.listarCategorias();
-
-        // Primero, limpia los items actuales
         vista.getComboBoxCategoria().removeAllItems();
-
-        // Añade cada categoría por su nombre
         for (Categoria c : categorias) {
             vista.getComboBoxCategoria().addItem(c.getNombre());
         }

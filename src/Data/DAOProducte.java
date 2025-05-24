@@ -72,7 +72,7 @@ public class DAOProducte {
                         rs.getInt("categoria"),
                         rs.getString("cat_nom"),
                         rs.getString("cat_desc"));
-
+            
                 Producte p = new Producte(
                         rs.getInt("codi"),
                         rs.getString("nom"),
@@ -81,7 +81,7 @@ public class DAOProducte {
                         rs.getString("tipus_preu"),
                         rs.getInt("stock"),
                         rs.getBoolean("oferta"));
-
+            
                 llista.add(p);
             }
 

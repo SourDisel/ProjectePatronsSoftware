@@ -26,6 +26,15 @@ public class Producte {
         this.tipusPreu = tipusPreu;
         this.stock = stock;
     }
+    public Producte(String nom, Categoria categoria, double preu, String tipusPreu, int stock, boolean oferta) {
+    this.nom = nom;
+    this.categoria = categoria;
+    this.preu = preu;
+    this.tipusPreu = tipusPreu;
+    this.stock = stock;
+    this.oferta = oferta;
+}
+
     public int getIdCategoria() {
         return getCategoria().getId();
     }
