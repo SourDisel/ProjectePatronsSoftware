@@ -51,6 +51,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        jTable_llistatAlumnes = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -181,10 +182,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jTable_PrincialFruteria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codi", "Nom", "Categoria", "Preu", "Tipus Preu", "Stock", "Oferta", "Total STOCK"
