@@ -1,6 +1,7 @@
 package Controller;
 
 import View.AfegirProducteFrame;
+import View.PrincipalFrame;
 import Model.Categoria;
 import Model.Producte;
 import Data.DAOProducte;
@@ -12,9 +13,13 @@ import java.util.List;
 
 public class ControladorProducte {
     private AfegirProducteFrame vista;
+    private PrincipalFrame principalFrame;
+    private ControladorPrincipal controladorPrincipal;  // <-- Agregado
 
-    public ControladorProducte(AfegirProducteFrame vista) {
+    public ControladorProducte(AfegirProducteFrame vista, PrincipalFrame principalFrame, ControladorPrincipal controladorPrincipal) {
         this.vista = vista;
+        this.principalFrame = principalFrame;
+        this.controladorPrincipal = controladorPrincipal;  // <-- Inicializado
     }
 
     private final ActionListener BotonAñadirProducte = new ActionListener() {
@@ -41,6 +46,10 @@ public class ControladorProducte {
 
                 System.out.println("Producte afegit correctament: " + producte);
 
+                vista.setVisible(false);
+                principalFrame.setVisible(true);
+                controladorPrincipal.recargarTabla();  // <-- Aquí recarga tabla
+
             } catch (NumberFormatException ex) {
                 System.err.println("Error: preu o stock no vàlids.");
             } catch (Exception ex) {
@@ -52,6 +61,15 @@ public class ControladorProducte {
     public void iniciarControlador() {
         vista.getPRAfegirBoton().addActionListener(BotonAñadirProducte);
         cargarCategoriasEnCombo();
+
+        vista.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                principalFrame.setVisible(true);
+                controladorPrincipal.recargarTabla();  // <-- Recarga también al cerrar
+            }
+        });
+
         vista.setVisible(true);
     }
 

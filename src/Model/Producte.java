@@ -10,7 +10,8 @@ public class Producte {
     private boolean oferta;
     private int idCategoria;
 
-    public Producte(int codi, String nom, Categoria categoria, double preu, String tipusPreu, int stock, boolean oferta) {
+    public Producte(int codi, String nom, Categoria categoria, double preu, String tipusPreu, int stock,
+            boolean oferta) {
         this.codi = codi;
         this.nom = nom;
         this.categoria = categoria;
@@ -19,6 +20,7 @@ public class Producte {
         this.stock = stock;
         this.oferta = oferta;
     }
+
     public Producte(String nom, int idCategoria, double preu, String tipusPreu, int stock) {
         this.nom = nom;
         this.idCategoria = idCategoria;
@@ -26,21 +28,26 @@ public class Producte {
         this.tipusPreu = tipusPreu;
         this.stock = stock;
     }
-    public Producte(String nom, Categoria categoria, double preu, String tipusPreu, int stock, boolean oferta) {
-    this.nom = nom;
-    this.categoria = categoria;
-    this.preu = preu;
-    this.tipusPreu = tipusPreu;
-    this.stock = stock;
-    this.oferta = oferta;
-}
 
+    public Producte(String nom, Categoria categoria, double preu, String tipusPreu, int stock, boolean oferta) {
+        this.nom = nom;
+        this.categoria = categoria;
+        this.preu = preu;
+        this.tipusPreu = tipusPreu;
+        this.stock = stock;
+        this.oferta = oferta;
+    }
+    public Producte() {
+        // Constructor per defecte
+    }
     public int getIdCategoria() {
         return getCategoria().getId();
     }
+
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
+
     public int getCodi() {
         return codi;
     }

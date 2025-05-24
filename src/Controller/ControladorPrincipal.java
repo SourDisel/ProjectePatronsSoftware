@@ -1,13 +1,13 @@
-// ControladorPrincipal.java completo corregido
-
 package Controller;
 
 import Data.DAOProducte;
 import Data.DAOCategoria;
 import Model.Categoria;
 import Model.Producte;
-import View.*;
-
+import View.ModificarProducteFrame;
+import View.PrincipalFrame;
+import View.AfegirProducteFrame;
+import View.AfegirCategoriaFrame;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
@@ -41,20 +41,38 @@ public class ControladorPrincipal {
     private void afegirListeners() {
         vista.getJButtonAfegir().addActionListener(e -> {
             AfegirProducteFrame finestra = new AfegirProducteFrame();
-            ControladorProducte controlador = new ControladorProducte(finestra);
+            ControladorProducte controlador = new ControladorProducte(finestra, vista, this);
             controlador.iniciarControlador();
+            vista.setVisible(false);
         });
 
         vista.getJButtonAfegirCategoria().addActionListener(e -> {
             AfegirCategoriaFrame finestra = new AfegirCategoriaFrame();
-            ControladorCategoria controlador = new ControladorCategoria(finestra);
+            ControladorCategoria controlador = new ControladorCategoria(finestra, vista, this);
             controlador.iniciarControlador();
+            vista.setVisible(false);
         });
 
         vista.getJButtonModificar().addActionListener(e -> {
-            ModificarProducteFrame finestra = new ModificarProducteFrame();
-            ControladorModificacion controlador = new ControladorModificacion(finestra);
-            controlador.iniciarControlador();
+            int filaSeleccionada = vista.getJTablePrincipalFruteria().getSelectedRow();
+            if (filaSeleccionada >= 0) {
+                int codiProducte = (int) vista.getJTablePrincipalFruteria().getValueAt(filaSeleccionada, 0);
+                Producte productoSeleccionado = daoProducte.buscarProducte(codiProducte);
+                if (productoSeleccionado != null) {
+                    ModificarProducteFrame finestraModificar = new ModificarProducteFrame();
+                    ControladorModificacion controladorMod = new ControladorModificacion(finestraModificar, vista,
+                            this);
+                    controladorMod.cargarProducto(productoSeleccionado); // carga datos en el formulario
+                    controladorMod.iniciarControlador();
+                    vista.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(vista, "No se pudo cargar el producto seleccionado.", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(vista, "Selecciona un producto para modificar.", "Atención",
+                        JOptionPane.WARNING_MESSAGE);
+            }
         });
 
         vista.getJButtonEliminar().addActionListener(e -> eliminarProducteSeleccionat());
@@ -101,13 +119,14 @@ public class ControladorPrincipal {
     public void cargarCategoriasEnCombo() {
         List<Categoria> categorias = DAOCategoria.listarCategorias();
 
-        // Primero, limpia los items actuales
         vista.getJComboBoxCategoria().removeAllItems();
 
-        // Añade cada categoría por su nombre
         for (Categoria c : categorias) {
             vista.getJComboBoxCategoria().addItem(c.getNombre());
         }
     }
 
+    public void recargarTabla() {
+        carregarTaulaProductes();
+    }
 }
