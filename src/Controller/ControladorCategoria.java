@@ -4,6 +4,7 @@ import View.AfegirCategoriaFrame;
 import Model.Categoria;
 import Data.DAOCategoria;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class ControladorCategoria {
@@ -27,5 +28,6 @@ public class ControladorCategoria {
         vista.getPRAfegirBoton().addActionListener(BotonAñadirCategoria);
         vista.setVisible(true);
     }
+    
 }
 
